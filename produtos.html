@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Produtos - Pérola Doce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <button
+            class="botao-menu"
+            id="botaoMenu"
+            aria-label="Abrir menu"
+        >
+            ☰
+        </button>
+
+        <div class="nome-marca">
+            <h1>Pérola Doce</h1>
+        </div>
+
+        <button
+            class="botao-carrinho"
+            id="botaoCarrinho"
+            aria-label="Abrir carrinho"
+        >
+            <svg
+                class="icone-carrinho"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                <circle cx="10" cy="20" r="1"></circle>
+                <circle cx="18" cy="20" r="1"></circle>
+            </svg>
+
+            <span id="contadorCarrinho">0</span>
+        </button>
+
+    </header>
+
+    <nav class="menu-mobile" id="menuMobile">
+       <a href="index.html">Início</a>
+       <a href="produtos.html">Produtos</a>
+       <a href="kit-festa.html">Monte seu Kit</a>
+       <a href="lojas.html">Lojas</a>
+       <a href="sobre.html">Sobre</a>
+       <a href="creditos.html">Créditos</a>
+    </nav>
+
+    <main>
+
+        <section class="cabecalho-pagina">
+
+            <h2>Nossos Produtos</h2>
+
+            <p>Escolha seus favoritos!</p>
+
+        </section>
+
+
+        <section class="grade-produtos">
+
+            <!-- BOLO -->
+            <article
+                class="produto-card"
+                data-nome="Bolo Red Velvet"
+                data-preco="12.00"
+            >
+
+                <img
+                    src="img/bolo.jpg"
+                    alt="Bolo Red Velvet"
+                >
+
+                <div class="produto-rodape">
+
+                    <span class="produto-preco">R$ 12,00</span>
+
+                    <button
+                        class="adicionar-carrinho"
+                        aria-label="Adicionar Bolo Red Velvet ao carrinho"
+                    >
+                        <svg
+                            class="icone-adicionar"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                            <circle cx="10" cy="20" r="1"></circle>
+                            <circle cx="18" cy="20" r="1"></circle>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- BRIGADEIRO -->
+            <article
+                class="produto-card"
+                data-nome="Brigadeiro Sabores"
+                data-preco="5.00"
+            >
+
+                <img
+                    src="img/brigadeiro.jpg"
+                    alt="Brigadeiro Sabores"
+                >
+
+                <div class="produto-rodape">
+
+                    <span class="produto-preco">R$ 5,00</span>
+
+                    <button
+                        class="adicionar-carrinho"
+                        aria-label="Adicionar Brigadeiro Sabores ao carrinho"
+                    >
+                        <svg
+                            class="icone-adicionar"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                            <circle cx="10" cy="20" r="1"></circle>
+                            <circle cx="18" cy="20" r="1"></circle>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- BROWNIE -->
+            <article
+                class="produto-card"
+                data-nome="Brownie Sabores"
+                data-preco="8.00"
+            >
+
+                <img
+                    src="img/brownie-card.jpg"
+                    alt="Brownie Sabores"
+                >
+
+                <div class="produto-rodape">
+
+                    <span class="produto-preco">R$ 8,00</span>
+
+                    <button
+                        class="adicionar-carrinho"
+                        aria-label="Adicionar Brownie Sabores ao carrinho"
+                    >
+                        <svg
+                            class="icone-adicionar"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                            <circle cx="10" cy="20" r="1"></circle>
+                            <circle cx="18" cy="20" r="1"></circle>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- SONHO -->
+            <article
+                class="produto-card"
+                data-nome="Sonhos Recheados"
+                data-preco="5.00"
+            >
+
+                <img
+                    src="img/sonho-card.jpg"
+                    alt="Sonhos Recheados"
+                >
+
+                <div class="produto-rodape">
+
+                    <span class="produto-preco">R$ 5,00</span>
+
+                    <button
+                        class="adicionar-carrinho"
+                        aria-label="Adicionar Sonhos Recheados ao carrinho"
+                    >
+                        <svg
+                            class="icone-adicionar"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                            <circle cx="10" cy="20" r="1"></circle>
+                            <circle cx="18" cy="20" r="1"></circle>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COOKIE -->
+            <article
+                class="produto-card"
+                data-nome="Cookie"
+                data-preco="3.50"
+            >
+
+                <img
+                    src="img/cookie-card.jpg"
+                    alt="Cookies"
+                >
+
+                <div class="produto-rodape">
+
+                    <span class="produto-preco">R$ 3,50</span>
+
+                    <button
+                        class="adicionar-carrinho"
+                        aria-label="Adicionar Cookie ao carrinho"
+                    >
+                        <svg
+                            class="icone-adicionar"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                            <circle cx="10" cy="20" r="1"></circle>
+                            <circle cx="18" cy="20" r="1"></circle>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- TORTA -->
+            <article
+                class="produto-card"
+                data-nome="Torta Fatia"
+                data-preco="8.00"
+            >
+
+                <img
+                    src="img/torta-card.webp"
+                    alt="Tortas Fatias"
+                >
+
+                <div class="produto-rodape">
+
+                    <span class="produto-preco">R$ 8,00</span>
+
+                    <button
+                        class="adicionar-carrinho"
+                        aria-label="Adicionar Torta ao carrinho"
+                    >
+                        <svg
+                            class="icone-adicionar"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                            <circle cx="10" cy="20" r="1"></circle>
+                            <circle cx="18" cy="20" r="1"></circle>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- PAINEL DO CARRINHO -->
+     <div id="painelCarrinho" class="painel-carrinho">
+
+        <div class="painel-carrinho-topo">
+
+            <h2>Seu carrinho</h2>
+
+            <button
+                id="fecharCarrinho"
+                class="fechar-carrinho"
+                aria-label="Fechar Carrinho"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div id="itensCarrinho" class="itens-carrinho">
+            <!-- 
+            O JavaScript vai criar aqui cada item com:
+
+            FOTO 
+            NOME
+            PREÇO
+            + Adicionar
+            Remover
+            -->
+        </div>
+
+        <div class="resumo-carrinho">
+
+            <span>Total:</span>
+
+            <strong id="totalCarrinho">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <!-- MENSAGEM VERDE DE SUCESSO-->
+
+    <div id="mensagemCarrinho" class="mensagem-carrinho">
+        Item adicionado ao carrinho com sucesso!
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

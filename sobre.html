@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sobre - Pérola Doce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <button
+            class="botao-menu"
+            id="botaoMenu"
+            aria-label="Abrir menu"
+        >
+            ☰
+        </button>
+
+        <div class="nome-marca">
+            <h1>Pérola Doce</h1>
+        </div>
+
+        <button
+            class="botao-carrinho"
+            id="botaoCarrinho"
+            aria-label="Abrir carrinho"
+        >
+
+            <svg
+                class="icone-carrinho"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                <circle cx="10" cy="20" r="1"></circle>
+                <circle cx="18" cy="20" r="1"></circle>
+            </svg>
+
+            <span id="contadorCarrinho">0</span>
+
+        </button>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="menu-mobile" id="menuMobile">
+
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="kit-festa.html">Monte seu Kit</a>
+        <a href="lojas.html">Lojas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="creditos.html">Créditos</a>
+
+    </nav>
+
+
+    <!-- CONTEÚDO -->
+
+    <main>
+
+        <section class="cabecalho-pagina">
+
+            <h2>Sobre Nós</h2>
+
+            <p>Conheça um pouco mais sobre a Pérola Doce</p>
+
+        </section>
+
+        <div class="linha-sobre"></div>
+
+        <section class="sobre-conteudo">
+
+    <p>
+        A Pérola Doce nasceu com a proposta de transformar momentos especiais
+        em experiências ainda mais doces.
+    </p>
+
+    <p>
+        Trabalhamos com produtos artesanais preparados com cuidado,
+        delicadeza e atenção aos detalhes.
+    </p>
+
+    <p>
+        Nosso objetivo é oferecer sabores marcantes, atendimento acolhedor
+        e opções para diferentes ocasiões, desde o dia a dia até festas
+        e eventos especiais.
+    </p>
+
+</section>
+
+<div class="linha-sobre"></div>
+
+<section class="nossa-equipe">
+
+    <h3>NOSSA EQUIPE:</h3>
+
+    <img
+        src="img/foto-equipe.jpeg"
+        alt="Equipe Pérola Doce"
+        class="foto-equipe"
+    >
+
+</section>
+
+    </main>
+
+
+    <!-- CARRINHO -->
+
+    <div id="painelCarrinho" class="painel-carrinho">
+
+        <div class="painel-carrinho-topo">
+
+            <h2>Seu Carrinho</h2>
+
+            <button
+                id="fecharCarrinho"
+                class="fechar-carrinho"
+                aria-label="Fechar carrinho"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div
+            id="itensCarrinho"
+            class="itens-carrinho"
+        >
+        </div>
+
+        <div class="resumo-carrinho">
+
+            <span>Total:</span>
+
+            <strong id="totalCarrinho">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

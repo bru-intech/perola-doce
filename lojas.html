@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nosso Espaço - Pérola Doce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <button
+            class="botao-menu"
+            id="botaoMenu"
+            aria-label="Abrir menu"
+        >
+            ☰
+        </button>
+
+        <div class="nome-marca">
+            <h1>Pérola Doce</h1>
+        </div>
+
+        <button
+            class="botao-carrinho"
+            id="botaoCarrinho"
+            aria-label="Abrir carrinho"
+        >
+
+            <svg
+                class="icone-carrinho"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"></path>
+                <circle cx="10" cy="20" r="1"></circle>
+                <circle cx="18" cy="20" r="1"></circle>
+            </svg>
+
+            <span id="contadorCarrinho">0</span>
+
+        </button>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav class="menu-mobile" id="menuMobile">
+
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="kit-festa.html">Monte seu Kit</a>
+        <a href="lojas.html">Lojas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="creditos.html">Créditos</a>
+
+    </nav>
+
+
+    <!-- CONTEÚDO DA PÁGINA -->
+
+    <main>
+
+        <section class="cabecalho-pagina">
+
+            <h2>Nosso Espaço</h2>
+
+            <p>Venha conhecer a Pérola Doce!</p>
+
+        </section>
+
+        <section class="espaco-loja">
+
+    <img
+        src="img/lanchonete-senac-img.png"
+        alt="Espaço Pérola Doce"
+        class="imagem-loja"
+    >
+
+   <div class="informacoes-loja">
+
+    <div class="bloco-loja">
+        <p>
+            Um espaço pensado para receber você com carinho,
+            delicadeza e muitos sabores especiais.
+        </p>
+    </div>
+
+    <div class="bloco-loja">
+        <strong>ENDEREÇO</strong>
+        <span>Senac Ennius Muniz - Brasília DF</span>
+    </div>
+
+    <div class="bloco-loja">
+        <strong>HORÁRIO DE FUNCIONAMENTO</strong>
+        <span>Segunda a sexta, das 9h às 18h</span>
+    </div>
+
+    <div class="bloco-loja bloco-mapa">
+        <strong>LOCALIZAÇÃO:</strong>
+
+        <iframe
+            src="https://www.google.com/maps?q=Senac+Ennius+Muniz+Brasilia+DF&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+</div>
+
+</section>
+
+    </main>
+
+
+    <!-- CARRINHO -->
+
+    <div id="painelCarrinho" class="painel-carrinho">
+
+        <div class="painel-carrinho-topo">
+
+            <h2>Seu Carrinho</h2>
+
+            <button
+                id="fecharCarrinho"
+                class="fechar-carrinho"
+                aria-label="Fechar carrinho"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div
+            id="itensCarrinho"
+            class="itens-carrinho"
+        >
+        </div>
+
+        <div class="resumo-carrinho">
+
+            <span>Total:</span>
+
+            <strong id="totalCarrinho">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
