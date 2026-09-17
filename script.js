@@ -127,8 +127,11 @@ if (boasVindas && nomeSalvo) {
 // Mostra "Olá, Nome!" na página inicial.
 if (saudacaoCliente && nomeSalvo) {
 
-    saudacaoCliente.textContent =
-        "Olá, " + nomeSalvo + "! Que bom te ver por aqui. ";
+    saudacaoCliente.innerHTML = `
+    <strong>Olá, ${nomeSalvo}!</strong>
+    <span>Que bom te ver por aqui.</span>
+`;
+
 }
 
 

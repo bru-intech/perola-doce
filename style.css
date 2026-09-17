@@ -7,6 +7,7 @@ CONFIGURAÇÕES GERAIS
     --azul-marinho: #172950;
     --preto: #000;
     --verde: #50c738;
+    --ciano: #61dbd1;
 }
 
 * {
@@ -39,7 +40,7 @@ CABEÇALHO
 
     padding: 14px 18px;
 
-    background-color: var(--azul-marinho);
+    background-color: var(--ciano);
 }
 
 
@@ -48,7 +49,27 @@ NOME DA MARCA
 ======================== */
 
 .nome-marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transform: translateX(-6px);
+
     text-align: center;
+
+    padding: 4px 10px;
+
+border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+}
+
+.logo-perola {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
 }
 
 .nome-marca h1 {
@@ -219,13 +240,53 @@ APRESENTAÇÃO
     width: 100%;
 
     padding: 10px 18px 0;
+    position: relative;
+}
+
+.texto-apresentacao {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    right: 18px;
+
+    padding: 12px 10px 30px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.925),
+        rgba(0, 0, 0, 0)
+    );
+
+    border-radius: 18px 18px 0 0;
+
+}
+
+.texto-apresentacao h1 {
+    margin: 0;
+    font-family: "Italiana", serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.911);
+}
+
+.texto-apresentacao p {
+    margin: 8px 0 0;
+    font-family: "Italiana", serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .apresentacao img {
     display: block;
 
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
 
     border-radius: 18px;
 }
@@ -243,6 +304,19 @@ ATALHOS DA HOME
     width: 100%;
 
     padding: 20px 0 24px;
+
+}
+
+.atalhos-home::before {
+    content: "";
+    display: block;
+
+    width: 85%;
+    height: 1px;
+
+    margin: 0 auto 20px;
+
+    background-color: rgba(0, 0, 0, 0.253);
 }
 
 
@@ -256,7 +330,7 @@ CARDS
     display: block;
 
     width: 90%;
-    height: 180px;
+    height: 130px;
 
     margin-left: auto;
     margin-right: auto;
@@ -274,7 +348,7 @@ CARDS
 /* ESPAÇO ENTRE OS CARDS */
 
 .card-home + .card-home {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 
@@ -369,6 +443,18 @@ TEXTO DOS CARDS
 
     font-family: "Cormorant Garamond", serif;
     font-size: 18.5px;
+}
+
+.cabecalho-pagina::after {
+    content: "";
+    display: block;
+
+    width: 85%;
+    height: 1px;
+
+    margin: 18px auto 0;
+
+    background-color: rgba(0, 0, 0, 0.123);
 }
 
 /*=====================
@@ -682,7 +768,7 @@ PAINEL DO CARRINHO
 }
 
 .resumo-carrinho strong {
-    color: var(--azul-marinho);
+    color: var(--ciano);
 }
 
 /* ÍCONE DA LIXEIRA */
@@ -809,7 +895,7 @@ RESUMO DO KIT
 }
 
 .total-kit strong {
-    color: var(--azul-marinho);
+    color: var(--ciano);
     font-size: 20px;
 }
 
@@ -821,7 +907,7 @@ RESUMO DO KIT
 
     padding: 15px;
 
-    background-color: var(--azul-marinho);
+    background-color: var(--ciano);
     color: var(--branco);
 
     border: none;
@@ -864,7 +950,7 @@ NOSSO ESPAÇO
 .bloco-loja {
     margin-bottom: 18px;
     padding: 20px;
-    background-color: var(--azul-marinho);
+    background-color: var(--ciano);
     border-radius: 18px;
 }
 
@@ -907,7 +993,7 @@ SOBRE NÓS
 .sobre-conteudo {
     margin: 0 18px 30px;
     padding: 22px 20px;
-    background-color: var(--azul-marinho);
+    background-color: var(--ciano);
     border-radius: 18px;
 }
 
@@ -925,19 +1011,24 @@ SOBRE NÓS
     margin-bottom: 0;
 }
 
-.linha-sobre {
-    width: calc(100% - 36px);
-    height: 2px;
-    margin: 0 auto 13px;
-    background-color: var(--azul-marinho);
-}
-
 /* =====================
 NOSSA EQUIPE
 ===================== */
 
 .nossa-equipe {
     padding: 0 18px 30px;
+}
+
+.nossa-equipe::before {
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    margin: 0 auto 26px;
+
+    background-color: rgba(0, 0, 0, 0.12);
 }
 
 .nossa-equipe h3 {
@@ -972,7 +1063,7 @@ CRÉDITOS
 .credito-bloco {
     margin-bottom: 18px;
     padding: 22px 20px;
-    background-color: var(--azul-marinho);
+    background-color: var(--ciano);
     border-radius: 18px;
 }
 
@@ -1009,7 +1100,7 @@ CRÉDITOS
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background-color: var(--azul-marinho);
+    background-color: var(--ciano);
     z-index: 5000;
 }
 
@@ -1068,22 +1159,34 @@ CRÉDITOS
 
 .saudacao-cliente {
     width: 100%;
-    padding: 18px 18px 6px;
-    text-align: center;
+    padding: 20px 28px 14px;
 }
 
 .saudacao-cliente p {
+    display: flex;
+    flex-direction: column;
+
     margin: 0;
+    padding-left: 14px;
+
+    border-left: 3px solid var(--ciano);
+
     font-family: "Poppins", sans-serif;
+    text-align: left;
+}
+
+.saudacao-cliente strong {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--preto);
+}
 
-     display: inline-block;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
+.saudacao-cliente span {
+    margin-top: 2px;
 
-    border-bottom: 1px solid var(--preto);
+    font-size: 14px;
+    font-weight: 300;
+    color: #555555;
 }
 
 .finalizar-pedido {
@@ -1092,7 +1195,7 @@ CRÉDITOS
     padding: 15px;
     border: none;
     border-radius: 12px;
-    background-color: var(--azul-marinho);
+    background-color: var(--ciano);
     color: var(--branco);
     font-family: "Poppins", sans-serif;
     font-size: 16px;
