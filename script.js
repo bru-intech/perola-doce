@@ -1,25 +1,145 @@
+/* =====================
+ELEMENTOS DA PÁGINA
+===================== */
+
+// Menu
 let botaoMenu = document.getElementById("botaoMenu");
 let menuMobile = document.getElementById("menuMobile");
+
+// Carrinho
 let botaoCarrinho = document.getElementById("botaoCarrinho");
 let painelCarrinho = document.getElementById("painelCarrinho");
 let fecharCarrinho = document.getElementById("fecharCarrinho");
 
-let botoesAdicionar = document.querySelectorAll(".adicionar-carrinho");
-let contadorCarrinho = document.getElementById("contadorCarrinho");
-let mensagemCarrinho = document.getElementById("mensagemCarrinho");
-let itensCarrinho = document.getElementById("itensCarrinho");
-let totalCarrinho = document.getElementById("totalCarrinho");
+let botoesAdicionar =
+    document.querySelectorAll(".adicionar-carrinho");
 
-let itensKit = document.querySelectorAll(".item-kit");
-let totalKit = document.getElementById("totalKit");
+let contadorCarrinho =
+    document.getElementById("contadorCarrinho");
+
+let mensagemCarrinho =
+    document.getElementById("mensagemCarrinho");
+
+let itensCarrinho =
+    document.getElementById("itensCarrinho");
+
+let totalCarrinho =
+    document.getElementById("totalCarrinho");
+
+let finalizarPedido =
+    document.getElementById("finalizarPedido");
+
+
+// Kit Festa
+let itensKit =
+    document.querySelectorAll(".item-kit");
+
+let totalKit =
+    document.getElementById("totalKit");
+
 let botaoAdicionarKit =
     document.getElementById("adicionarKitCarrinho");
 
 
-// Recupera o carrinho salvo no navegador.
-// Se não existir nenhum carrinho salvo, começa com um array vazio.
+// Identificação do cliente
+let boasVindas =
+    document.getElementById("boasVindas");
+
+let nomeCliente =
+    document.getElementById("nomeCliente");
+
+let entrarSite =
+    document.getElementById("entrarSite");
+
+let erroNome =
+    document.getElementById("erroNome");
+
+let saudacaoCliente =
+    document.getElementById("saudacaoCliente");
+
+
+// Checkout
+let nomeCheckout =
+    document.getElementById("nomeCheckout");
+
+let itensCheckout =
+    document.getElementById("itensCheckout");
+
+let totalCheckout =
+    document.getElementById("totalCheckout");
+
+
+/* =====================
+DADOS SALVOS
+===================== */
+
+// Recupera o carrinho salvo.
+// Se não existir, começa vazio.
 let carrinho =
     JSON.parse(localStorage.getItem("carrinho")) || [];
+
+
+// Recupera o nome salvo.
+let nomeSalvo =
+    localStorage.getItem("nomeCliente");
+
+
+/* =====================
+IDENTIFICAÇÃO DO CLIENTE
+===================== */
+
+if (entrarSite) {
+
+    entrarSite.addEventListener("click", function () {
+
+        let nome =
+            nomeCliente.value.trim();
+
+        if (nome === "") {
+
+            erroNome.textContent =
+                "Digite seu nome para continuar.";
+
+            return;
+        }
+
+        localStorage.setItem(
+            "nomeCliente",
+            nome
+        );
+
+        boasVindas.style.display = "none";
+
+    });
+
+}
+
+
+// Se já existe nome salvo,
+// não mostra novamente a entrada.
+if (boasVindas && nomeSalvo) {
+
+    boasVindas.style.display = "none";
+
+}
+
+
+// Mostra "Olá, Nome!" na página inicial.
+if (saudacaoCliente && nomeSalvo) {
+
+    saudacaoCliente.textContent =
+        "Olá, " + nomeSalvo + "! 👋";
+
+}
+
+
+// Mostra o nome no checkout.
+if (nomeCheckout && nomeSalvo) {
+
+    nomeCheckout.textContent =
+        nomeSalvo;
+
+}
 
 
 /* =====================
@@ -28,41 +148,61 @@ MENU
 
 if (botaoMenu && menuMobile) {
 
-    botaoMenu.addEventListener("click", function() {
+    botaoMenu.addEventListener(
+        "click",
+        function () {
 
-        menuMobile.classList.toggle("aberto");
+            menuMobile.classList.toggle("aberto");
 
-        if (menuMobile.classList.contains("aberto")) {
+            if (
+                menuMobile.classList.contains("aberto")
+            ) {
 
-            botaoMenu.textContent = "✕";
-            botaoMenu.setAttribute("aria-label", "Fechar menu");
+                botaoMenu.textContent = "✕";
 
-        } else {
+                botaoMenu.setAttribute(
+                    "aria-label",
+                    "Fechar menu"
+                );
 
-            botaoMenu.textContent = "☰";
-            botaoMenu.setAttribute("aria-label", "Abrir menu");
+            } else {
 
-        }
+                botaoMenu.textContent = "☰";
 
-    });
+                botaoMenu.setAttribute(
+                    "aria-label",
+                    "Abrir menu"
+                );
 
-
-    document.addEventListener("click", function(evento) {
-
-        if (
-            menuMobile.classList.contains("aberto") &&
-            !menuMobile.contains(evento.target) &&
-            !botaoMenu.contains(evento.target)
-        ) {
-
-            menuMobile.classList.remove("aberto");
-
-            botaoMenu.textContent = "☰";
-            botaoMenu.setAttribute("aria-label", "Abrir menu");
+            }
 
         }
+    );
 
-    });
+
+    document.addEventListener(
+        "click",
+        function (evento) {
+
+            if (
+                menuMobile.classList.contains("aberto") &&
+                !menuMobile.contains(evento.target) &&
+                !botaoMenu.contains(evento.target)
+            ) {
+
+                menuMobile.classList.remove("aberto");
+
+                botaoMenu.textContent = "☰";
+
+                botaoMenu.setAttribute(
+                    "aria-label",
+                    "Abrir menu"
+                );
+
+            }
+
+        }
+    );
 
 }
 
@@ -73,22 +213,47 @@ ABRIR E FECHAR CARRINHO
 
 if (botaoCarrinho && painelCarrinho) {
 
-    botaoCarrinho.addEventListener("click", function() {
+    botaoCarrinho.addEventListener(
+        "click",
+        function () {
 
-        painelCarrinho.classList.add("aberto");
+            painelCarrinho.classList.add("aberto");
 
-    });
+        }
+    );
 
 }
 
 
 if (fecharCarrinho && painelCarrinho) {
 
-    fecharCarrinho.addEventListener("click", function() {
+    fecharCarrinho.addEventListener(
+        "click",
+        function () {
 
-        painelCarrinho.classList.remove("aberto");
+            painelCarrinho.classList.remove("aberto");
 
-    });
+        }
+    );
+
+}
+
+
+/* =====================
+FINALIZAR PEDIDO
+===================== */
+
+if (finalizarPedido) {
+
+    finalizarPedido.addEventListener(
+        "click",
+        function () {
+
+            window.location.href =
+                "checkout.html";
+
+        }
+    );
 
 }
 
@@ -115,16 +280,20 @@ function atualizarContadorCarrinho() {
 
     let quantidadeTotal = 0;
 
-    carrinho.forEach(function(produto) {
+    carrinho.forEach(
+        function (produto) {
 
-        quantidadeTotal += produto.quantidade;
+            quantidadeTotal +=
+                produto.quantidade;
 
-    });
+        }
+    );
 
 
     if (contadorCarrinho) {
 
-        contadorCarrinho.textContent = quantidadeTotal;
+        contadorCarrinho.textContent =
+            quantidadeTotal;
 
     }
 
@@ -135,86 +304,107 @@ function atualizarContadorCarrinho() {
 ADICIONAR PRODUTOS
 ===================== */
 
-botoesAdicionar.forEach(function(botao) {
+botoesAdicionar.forEach(
+    function (botao) {
 
-    botao.addEventListener("click", function() {
+        botao.addEventListener(
+            "click",
+            function () {
 
-        let cardProduto =
-            botao.closest(".produto-card");
+                let cardProduto =
+                    botao.closest(".produto-card");
 
-        let nomeProduto =
-            cardProduto.dataset.nome;
+                let nomeProduto =
+                    cardProduto.dataset.nome;
 
-        let precoProduto =
-            Number(cardProduto.dataset.preco);
+                let precoProduto =
+                    Number(
+                        cardProduto.dataset.preco
+                    );
 
-        let imagemProduto =
-            cardProduto.querySelector("img").src;
-
-
-        let produtoExistente =
-            carrinho.find(function(produto) {
-
-                return produto.nome === nomeProduto;
-
-            });
-
-
-        if (produtoExistente) {
-
-            produtoExistente.quantidade++;
-
-        } else {
-
-            let produto = {
-
-                nome: nomeProduto,
-                preco: precoProduto,
-                imagem: imagemProduto,
-                quantidade: 1
-
-            };
-
-            carrinho.push(produto);
-
-        }
+                let imagemProduto =
+                    cardProduto
+                        .querySelector("img")
+                        .src;
 
 
-        salvarCarrinho();
+                let produtoExistente =
+                    carrinho.find(
+                        function (produto) {
 
-        mostrarCarrinho();
+                            return (
+                                produto.nome === nomeProduto
+                            );
+
+                        }
+                    );
 
 
-        if (mensagemCarrinho) {
+                if (produtoExistente) {
 
-            mensagemCarrinho.classList.add("mostrar");
+                    produtoExistente.quantidade++;
 
-            setTimeout(function() {
+                } else {
 
-                mensagemCarrinho.classList.remove("mostrar");
+                    let produto = {
 
-            }, 2000);
+                        nome: nomeProduto,
+                        preco: precoProduto,
+                        imagem: imagemProduto,
+                        quantidade: 1
 
-        }
+                    };
 
-    });
+                    carrinho.push(produto);
 
-});
+                }
+
+
+                salvarCarrinho();
+
+                mostrarCarrinho();
+
+
+                if (mensagemCarrinho) {
+
+                    mensagemCarrinho
+                        .classList
+                        .add("mostrar");
+
+                    setTimeout(
+                        function () {
+
+                            mensagemCarrinho
+                                .classList
+                                .remove("mostrar");
+
+                        },
+                        2000
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
 
 
 /* =====================
-MOSTRAR PRODUTOS NO CARRINHO
+MOSTRAR PRODUTOS
+NO CARRINHO
 ===================== */
 
 function mostrarCarrinho() {
 
-    // Atualiza o número do carrinho
     atualizarContadorCarrinho();
 
 
-    // Algumas páginas ainda não possuem
-    // o painel visual do carrinho.
-    if (!itensCarrinho || !totalCarrinho) {
+    if (
+        !itensCarrinho ||
+        !totalCarrinho
+    ) {
 
         return;
 
@@ -226,125 +416,213 @@ function mostrarCarrinho() {
     let total = 0;
 
 
-    carrinho.forEach(function(produto, indice) {
+    carrinho.forEach(
+        function (produto, indice) {
 
-        total +=
-            produto.preco * produto.quantidade;
+            let subtotal =
+                produto.preco *
+                produto.quantidade;
 
-
-        let item =
-            document.createElement("div");
-
-
-        item.classList.add("item-carrinho");
+            total += subtotal;
 
 
-        item.innerHTML = `
-            <img src="${produto.imagem}" alt="${produto.nome}">
+            let item =
+                document.createElement("div");
 
-            <div>
-
-                <p class="item-carrinho-nome">
-                    ${produto.nome}
-                </p>
-
-                <p class="item-carrinho-quantidade">
-                    Qtd. ${produto.quantidade}
-                </p>
-
-            </div>
-
-            <span class="item-carrinho-preco">
-
-                R$ ${(produto.preco * produto.quantidade)
-                    .toFixed(2)
-                    .replace(".", ",")}
-
-            </span>
-
-            <div class="item-carrinho-acoes">
-
-                <button class="adicionar-mais">
-                    + Adicionar
-                </button>
-
-                <button class="remover-item">
-
-                    <svg
-                        class="icone-lixeira"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <path d="M3 6h18"></path>
-                        <path d="M8 6V4h8v2"></path>
-                        <path d="M19 6l-1 14H6L5 6"></path>
-                        <path d="M10 10v6"></path>
-                        <path d="M14 10v6"></path>
-
-                    </svg>
-
-                    Remover
-
-                </button>
-
-            </div>
-        `;
+            item.classList.add(
+                "item-carrinho"
+            );
 
 
-        let botaoAdicionarMais =
-            item.querySelector(".adicionar-mais");
+            item.innerHTML = `
+                <img
+                    src="${produto.imagem}"
+                    alt="${produto.nome}"
+                >
+
+                <div>
+
+                    <p class="item-carrinho-nome">
+                        ${produto.nome}
+                    </p>
+
+                    <p class="item-carrinho-quantidade">
+                        Qtd. ${produto.quantidade}
+                    </p>
+
+                </div>
+
+                <span class="item-carrinho-preco">
+                    R$ ${subtotal
+                        .toFixed(2)
+                        .replace(".", ",")}
+                </span>
+
+                <div class="item-carrinho-acoes">
+
+                    <button class="adicionar-mais">
+                        + Adicionar
+                    </button>
+
+                    <button class="remover-item">
+
+                        <svg
+                            class="icone-lixeira"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path d="M3 6h18"></path>
+                            <path d="M8 6V4h8v2"></path>
+                            <path d="M19 6l-1 14H6L5 6"></path>
+                            <path d="M10 10v6"></path>
+                            <path d="M14 10v6"></path>
+                        </svg>
+
+                        Remover
+
+                    </button>
+
+                </div>
+            `;
 
 
-        botaoAdicionarMais.addEventListener(
-            "click",
-            function() {
-
-                produto.quantidade++;
-
-                salvarCarrinho();
-
-                mostrarCarrinho();
-
-            }
-        );
+            let botaoAdicionarMais =
+                item.querySelector(
+                    ".adicionar-mais"
+                );
 
 
-        let botaoRemover =
-            item.querySelector(".remover-item");
+            botaoAdicionarMais.addEventListener(
+                "click",
+                function () {
 
+                    produto.quantidade++;
 
-        botaoRemover.addEventListener(
-            "click",
-            function() {
+                    salvarCarrinho();
 
-                if (produto.quantidade > 1) {
-
-                    produto.quantidade--;
-
-                } else {
-
-                    carrinho.splice(indice, 1);
+                    mostrarCarrinho();
 
                 }
+            );
 
 
-                salvarCarrinho();
-
-                mostrarCarrinho();
-
-            }
-        );
+            let botaoRemover =
+                item.querySelector(
+                    ".remover-item"
+                );
 
 
-        itensCarrinho.appendChild(item);
+            botaoRemover.addEventListener(
+                "click",
+                function () {
 
-    });
+                    if (
+                        produto.quantidade > 1
+                    ) {
+
+                        produto.quantidade--;
+
+                    } else {
+
+                        carrinho.splice(
+                            indice,
+                            1
+                        );
+
+                    }
+
+
+                    salvarCarrinho();
+
+                    mostrarCarrinho();
+
+                }
+            );
+
+
+            itensCarrinho.appendChild(
+                item
+            );
+
+        }
+    );
 
 
     totalCarrinho.textContent =
         "R$ " +
-        total.toFixed(2).replace(".", ",");
+        total
+            .toFixed(2)
+            .replace(".", ",");
+
+}
+
+
+/* =====================
+CHECKOUT
+===================== */
+
+function mostrarCheckout() {
+
+    if (
+        !itensCheckout ||
+        !totalCheckout
+    ) {
+
+        return;
+
+    }
+
+
+    itensCheckout.innerHTML = "";
+
+    let total = 0;
+
+
+    carrinho.forEach(
+        function (produto) {
+
+            let subtotal =
+                produto.preco *
+                produto.quantidade;
+
+            total += subtotal;
+
+
+            let item =
+                document.createElement("div");
+
+            item.classList.add(
+                "checkout-item"
+            );
+
+
+            item.innerHTML = `
+                <span>
+                    ${produto.nome}
+                    x${produto.quantidade}
+                </span>
+
+                <strong>
+                    R$ ${subtotal
+                        .toFixed(2)
+                        .replace(".", ",")}
+                </strong>
+            `;
+
+
+            itensCheckout.appendChild(
+                item
+            );
+
+        }
+    );
+
+
+    totalCheckout.textContent =
+        "R$ " +
+        total
+            .toFixed(2)
+            .replace(".", ",");
 
 }
 
@@ -353,42 +631,32 @@ function mostrarCarrinho() {
 QUANTIDADE DO KIT FESTA
 ===================== */
 
-itensKit.forEach(function(item) {
+itensKit.forEach(
+    function (item) {
 
-    let botaoMais =
-        item.querySelector(".aumentar-quantidade");
+        let botaoMais =
+            item.querySelector(
+                ".aumentar-quantidade"
+            );
 
-    let botaoMenos =
-        item.querySelector(".diminuir-quantidade");
+        let botaoMenos =
+            item.querySelector(
+                ".diminuir-quantidade"
+            );
 
-    let quantidadeTexto =
-        item.querySelector(".quantidade-kit");
+        let quantidadeTexto =
+            item.querySelector(
+                ".quantidade-kit"
+            );
 
-    let quantidade = 0;
-
-
-    botaoMais.addEventListener(
-        "click",
-        function() {
-
-            quantidade++;
-
-            quantidadeTexto.textContent =
-                quantidade;
-
-            calcularTotalKit();
-
-        }
-    );
+        let quantidade = 0;
 
 
-    botaoMenos.addEventListener(
-        "click",
-        function() {
+        botaoMais.addEventListener(
+            "click",
+            function () {
 
-            if (quantidade > 0) {
-
-                quantidade--;
+                quantidade++;
 
                 quantidadeTexto.textContent =
                     quantidade;
@@ -396,11 +664,29 @@ itensKit.forEach(function(item) {
                 calcularTotalKit();
 
             }
+        );
 
-        }
-    );
 
-});
+        botaoMenos.addEventListener(
+            "click",
+            function () {
+
+                if (quantidade > 0) {
+
+                    quantidade--;
+
+                    quantidadeTexto.textContent =
+                        quantidade;
+
+                    calcularTotalKit();
+
+                }
+
+            }
+        );
+
+    }
+);
 
 
 /* =====================
@@ -412,29 +698,38 @@ function calcularTotalKit() {
     let total = 0;
 
 
-    itensKit.forEach(function(item) {
+    itensKit.forEach(
+        function (item) {
 
-        let preco =
-            Number(item.dataset.preco);
+            let preco =
+                Number(
+                    item.dataset.preco
+                );
 
-        let quantidade =
-            Number(
-                item.querySelector(
-                    ".quantidade-kit"
-                ).textContent
-            );
+            let quantidade =
+                Number(
+                    item
+                        .querySelector(
+                            ".quantidade-kit"
+                        )
+                        .textContent
+                );
 
 
-        total += preco * quantidade;
+            total +=
+                preco * quantidade;
 
-    });
+        }
+    );
 
 
     if (totalKit) {
 
         totalKit.textContent =
             "R$ " +
-            total.toFixed(2).replace(".", ",");
+            total
+                .toFixed(2)
+                .replace(".", ",");
 
     }
 
@@ -442,103 +737,131 @@ function calcularTotalKit() {
 
 
 /* =====================
-CARREGAR CARRINHO SALVO
-===================== */
-
-// Quando uma página é aberta,
-// mostra o carrinho que estava salvo.
-mostrarCarrinho();
-
-/* =====================
 ADICIONAR KIT AO CARRINHO
 ===================== */
 
 if (botaoAdicionarKit) {
 
-    botaoAdicionarKit.addEventListener("click", function() {
+    botaoAdicionarKit.addEventListener(
+        "click",
+        function () {
 
-        let valorTotalKit = 0;
-
-
-        // Calcula o valor total do kit montado
-        itensKit.forEach(function(item) {
-
-            let preco =
-                Number(item.dataset.preco);
-
-            let quantidade =
-                Number(
-                    item.querySelector(
-                        ".quantidade-kit"
-                    ).textContent
-                );
-
-            valorTotalKit += preco * quantidade;
-
-        });
+            let valorTotalKit = 0;
 
 
-        // Se nenhum produto foi escolhido
-        if (valorTotalKit === 0) {
+            itensKit.forEach(
+                function (item) {
+
+                    let preco =
+                        Number(
+                            item.dataset.preco
+                        );
+
+                    let quantidade =
+                        Number(
+                            item
+                                .querySelector(
+                                    ".quantidade-kit"
+                                )
+                                .textContent
+                        );
+
+
+                    valorTotalKit +=
+                        preco * quantidade;
+
+                }
+            );
+
+
+            if (valorTotalKit === 0) {
+
+                if (mensagemCarrinho) {
+
+                    mensagemCarrinho.textContent =
+                        "Escolha pelo menos um item para montar seu kit.";
+
+                    mensagemCarrinho
+                        .classList
+                        .add("erro");
+
+                    mensagemCarrinho
+                        .classList
+                        .add("mostrar");
+
+
+                    setTimeout(
+                        function () {
+
+                            mensagemCarrinho
+                                .classList
+                                .remove("mostrar");
+
+                        },
+                        2000
+                    );
+
+                }
+
+                return;
+
+            }
+
+
+            let kit = {
+
+                nome: "Kit Festa",
+                preco: valorTotalKit,
+                imagem: "img/kit-festa-home.jpg",
+                quantidade: 1
+
+            };
+
+
+            carrinho.push(kit);
+
+            salvarCarrinho();
+
+            mostrarCarrinho();
+
 
             if (mensagemCarrinho) {
 
                 mensagemCarrinho.textContent =
-                    "Escolha pelo menos um item para montar seu kit.";
+                    "Kit Festa adicionado ao carrinho com sucesso!";
 
-                mensagemCarrinho.classList.add("erro");
-                mensagemCarrinho.classList.add("mostrar");
-                
+                mensagemCarrinho
+                    .classList
+                    .remove("erro");
 
-                setTimeout(function() {
+                mensagemCarrinho
+                    .classList
+                    .add("mostrar");
 
-                    mensagemCarrinho.classList.remove("mostrar");
 
-                }, 2000);
+                setTimeout(
+                    function () {
+
+                        mensagemCarrinho
+                            .classList
+                            .remove("mostrar");
+
+                    },
+                    2000
+                );
 
             }
 
-            return;
-
         }
-
-
-        // Cria o Kit Festa
-        let kit = {
-
-            nome: "Kit Festa",
-            preco: valorTotalKit,
-            imagem: "img/kit-festa-home.jpg",
-            quantidade: 1
-
-        };
-
-
-        // Adiciona o kit ao carrinho
-        carrinho.push(kit);
-
-        salvarCarrinho();
-
-        atualizarContadorCarrinho();
-
-
-        // Mostra mensagem de sucesso
-        if (mensagemCarrinho) {
-
-            mensagemCarrinho.textContent =
-                "Kit Festa adicionado ao carrinho com sucesso!";
-            
-            mensagemCarrinho.classList.remove("erro");
-            mensagemCarrinho.classList.add("mostrar");
-
-            setTimeout(function() {
-
-                mensagemCarrinho.classList.remove("mostrar");
-
-            }, 2000);
-
-        }
-
-    });
+    );
 
 }
+
+
+/* =====================
+CARREGAR DADOS DA PÁGINA
+===================== */
+
+mostrarCarrinho();
+
+mostrarCheckout();

@@ -5,6 +5,7 @@ CONFIGURAÇÕES GERAIS
 :root {
     --branco: #ffffff;
     --azul-marinho: #172950;
+    --preto: #000;
 }
 
 * {
@@ -996,4 +997,422 @@ CRÉDITOS
 
 .credito-bloco p:last-child {
     margin-bottom: 0;
+}
+
+/* TELA DE BOAS-VINDAS */
+
+.boas-vindas {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-color: var(--azul-marinho);
+    z-index: 5000;
+}
+
+.caixa-boas-vindas {
+    width: 100%;
+    max-width: 360px;
+    padding: 30px 22px;
+    background-color: var(--branco);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.caixa-boas-vindas h2 {
+    margin: 0 0 12px;
+    font-family: "Italiana", serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #2f2f2f;
+}
+
+.caixa-boas-vindas p {
+    margin: 0 0 18px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+#nomeCliente {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+#entrarSite {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--azul-marinho);
+    color: var(--branco);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.caixa-boas-vindas .erro-nome {
+    margin: 12px 0 0;
+    color: #d9534f;
+    font-size: 14px;
+}
+
+.saudacao-cliente {
+    width: 100%;
+    padding: 18px 18px 6px;
+}
+
+.saudacao-cliente p {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--azul-marinho);
+}
+
+.finalizar-pedido {
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--azul-marinho);
+    color: var(--branco);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* CHECKOUT */
+
+.checkout {
+    padding: 0 18px 30px;
+}
+
+.checkout-cliente,
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+    padding: 18px;
+
+    background-color: var(--azul-marinho);
+    color: var(--branco);
+
+    border-radius: 16px;
+
+    font-family: "Poppins", sans-serif;
+}
+
+.checkout-cliente span,
+.checkout-total span {
+    font-size: 16px;
+}
+
+.checkout-cliente strong,
+.checkout-total strong {
+    font-size: 18px;
+}
+
+.checkout-itens {
+    margin-bottom: 18px;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+
+    padding: 16px 4px;
+
+    border-bottom: 1px solid #dddddd;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+.checkout-item span {
+    flex: 1;
+}
+
+.checkout-item strong {
+    white-space: nowrap;
+}
+
+.confirmar-pedido {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: var(--azul-marinho);
+    color: var(--branco);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.voltar-compras {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    color: var(--azul-marinho);
+    text-decoration: none;
+}
+
+/* ===== LOGIN ADMINISTRADORA ===== */
+
+.pagina-login-admin {
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: "Poppins", sans-serif;
+}
+
+.login-admin-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-admin-caixa {
+    width: 100%;
+    max-width: 380px;
+    padding: 32px 26px;
+    background-color: var(--azul-marinho);
+    border-radius: 18px;
+}
+
+.login-admin-caixa h1 {
+    margin: 0 0 28px;
+    text-align: center;
+    font-family: "Italiana", serif;
+    font-size: 32px;
+    color: white;
+}
+
+.login-admin-caixa label {
+    display: block;
+    margin: 0 0 7px;
+    font-size: 14px;
+    color: white;
+}
+
+.login-admin-caixa input {
+    width: 100%;
+    padding: 13px 14px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 9px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-admin-caixa button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 9px;
+    background-color: white;
+    color: var(--azul-marinho);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#erroLogin {
+    margin: 14px 0 0;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+}
+
+/* ===== PAINEL DE PEDIDOS ===== */
+
+.painel-pedidos {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    font-family: "Poppins", sans-serif;
+}
+
+.painel-pedidos > h1 {
+    font-family: "Italiana", serif;
+    font-size: 36px;
+    color: var(--preto);
+}
+
+.pedido-admin {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: var(--azul-marinho);
+    color: white;
+}
+
+.pedido-admin h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: 21px;
+}
+
+.cabecalho-produtos-pedido,
+.linha-produto-pedido {
+    display: grid;
+    grid-template-columns: 1fr 160px 160px;
+    align-items: center;
+    gap: 20px;
+}
+
+.cabecalho-produtos-pedido {
+    padding: 12px 0;
+    border-bottom: 1px solid white;
+}
+
+.linha-produto-pedido {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cabecalho-produtos-pedido strong:nth-child(2),
+.linha-produto-pedido span:nth-child(2) {
+    text-align: center;
+}
+
+.cabecalho-produtos-pedido strong:nth-child(3),
+.linha-produto-pedido span:nth-child(3) {
+    text-align: right;
+}
+
+.total-pedido-admin {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 17px;
+}
+
+.linha-painel-pedidos {
+    width: 100%;
+    height: 1px;
+    margin: 18px 0 0;
+    background-color: var(--azul-marinho);
+}
+
+/* ===== BOTÃO FINALIZAR PEDIDO ===== */
+
+.botao-finalizar {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 9px;
+
+    background-color: #b83a3a;
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.botao-finalizar.finalizado {
+    background-color: #3f7d4a;
+}
+
+.pedido-com-acao {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.pedido-admin {
+    flex: 1;
+}
+
+.botao-finalizar {
+    flex-shrink: 0;
+}
+
+/* ===== ABAS DOS PEDIDOS ===== */
+
+.abas-pedidos {
+    display: flex;
+    margin-top: 30px;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.aba-pedido {
+    position: relative;
+
+    padding: 11px 25px;
+
+    border: none;
+    background: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    color: var(--preto);
+    cursor: pointer;
+}
+
+.aba-pedido.ativa {
+    font-weight: 600;
+}
+
+.aba-pedido.ativa::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 3px;
+    background-color: var(--preto);
+}
+
+.produto-card {
+    position: relative;
+}
+
+.produto-nome {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    z-index: 2;
+
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: white;
+
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }

@@ -24,6 +24,25 @@
 
 <body>
 
+    <div class="boas-vindas" id="boasVindas">
+    <div class="caixa-boas-vindas">
+        <h2>Bem-vindo(a) à Pérola Doce!</h2>
+
+        <p>Como podemos te chamar?</p>
+
+        <input
+            type="text"
+            id="nomeCliente"
+            placeholder="Digite seu nome"
+            autocomplete="off"
+        >
+
+        <button id="entrarSite">Entrar</button>
+
+        <p class="erro-nome" id="erroNome"></p>
+    </div>
+</div>
+
     <header class="cabecalho">
 
         <button
@@ -73,11 +92,13 @@
 
     <main>
 
+    <div class="saudacao-cliente">
+    <p id="saudacaoCliente"></p>
+</div>   
+
         <section class="apresentacao">
 
-            <img
-                src="img/apresentacao-perola-doce.png"
-                alt="Pérola Doce - Confeitaria Artesanal"
+            <img src="img/apresentacao-perola-doce.png" alt="Pérola Doce - Confeitaria Artesanal"
             >
 
         </section>
@@ -136,6 +157,7 @@
         >
             ✕
         </button>
+        
     </div>
 
     <div id="itensCarrinho" class="itens-carrinho">
@@ -145,6 +167,10 @@
         <span>Total:</span>
         <strong id="totalCarrinho">R$ 0,00</strong>
     </div>
+
+    <button class="finalizar-pedido" id="finalizarPedido">
+    Finalizar pedido
+</button>
 
 </div>
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar Pedido | Pérola Doce</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main>
+
+        <section class="cabecalho-pagina">
+            <h2>Finalizar Pedido</h2>
+            <p>Confira seu pedido antes de finalizar</p>
+        </section>
+
+        <div class="linha-sobre"></div>
+
+        <section class="checkout">
+
+            <a href="index.html" class="voltar-compras">
+    ← Continuar comprando
+</a>
+
+            <div class="checkout-cliente">
+                <span>Pedido de</span>
+                <strong id="nomeCheckout"></strong>
+            </div>
+
+            <div class="checkout-itens" id="itensCheckout">
+                <!-- Os produtos serão colocados aqui pelo JavaScript -->
+            </div>
+
+            <div class="checkout-total">
+                <span>Total</span>
+                <strong id="totalCheckout">R$ 0,00</strong>
+            </div>
+
+            <button class="confirmar-pedido" id="confirmarPedido">
+                Confirmar pedido
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script type="module" src="firebase.js"></script>
+
+</body>
+</html>

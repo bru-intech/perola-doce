@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
         rel="stylesheet"
     >
 
@@ -58,14 +58,16 @@
 
     </header>
 
+
     <nav class="menu-mobile" id="menuMobile">
-       <a href="index.html">Início</a>
-       <a href="produtos.html">Produtos</a>
-       <a href="kit-festa.html">Monte seu Kit</a>
-       <a href="lojas.html">Lojas</a>
-       <a href="sobre.html">Sobre</a>
-       <a href="creditos.html">Créditos</a>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="kit-festa.html">Monte seu Kit</a>
+        <a href="lojas.html">Lojas</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="creditos.html">Créditos</a>
     </nav>
+
 
     <main>
 
@@ -80,12 +82,17 @@
 
         <section class="grade-produtos">
 
+
             <!-- BOLO -->
             <article
                 class="produto-card"
                 data-nome="Bolo Red Velvet"
                 data-preco="12.00"
             >
+
+                <h3 class="produto-nome">
+                    Bolo Red Velvet
+                </h3>
 
                 <img
                     src="img/bolo.jpg"
@@ -94,7 +101,9 @@
 
                 <div class="produto-rodape">
 
-                    <span class="produto-preco">R$ 12,00</span>
+                    <span class="produto-preco">
+                        R$ 12,00
+                    </span>
 
                     <button
                         class="adicionar-carrinho"
@@ -123,6 +132,10 @@
                 data-preco="5.00"
             >
 
+                <h3 class="produto-nome">
+                    Brigadeiro Sabores
+                </h3>
+
                 <img
                     src="img/brigadeiro.jpg"
                     alt="Brigadeiro Sabores"
@@ -130,7 +143,9 @@
 
                 <div class="produto-rodape">
 
-                    <span class="produto-preco">R$ 5,00</span>
+                    <span class="produto-preco">
+                        R$ 5,00
+                    </span>
 
                     <button
                         class="adicionar-carrinho"
@@ -159,6 +174,10 @@
                 data-preco="8.00"
             >
 
+                <h3 class="produto-nome">
+                    Brownie Sabores
+                </h3>
+
                 <img
                     src="img/brownie-card.jpg"
                     alt="Brownie Sabores"
@@ -166,7 +185,9 @@
 
                 <div class="produto-rodape">
 
-                    <span class="produto-preco">R$ 8,00</span>
+                    <span class="produto-preco">
+                        R$ 8,00
+                    </span>
 
                     <button
                         class="adicionar-carrinho"
@@ -195,6 +216,10 @@
                 data-preco="5.00"
             >
 
+                <h3 class="produto-nome">
+                    Sonhos Recheados
+                </h3>
+
                 <img
                     src="img/sonho-card.jpg"
                     alt="Sonhos Recheados"
@@ -202,7 +227,9 @@
 
                 <div class="produto-rodape">
 
-                    <span class="produto-preco">R$ 5,00</span>
+                    <span class="produto-preco">
+                        R$ 5,00
+                    </span>
 
                     <button
                         class="adicionar-carrinho"
@@ -231,6 +258,10 @@
                 data-preco="3.50"
             >
 
+                <h3 class="produto-nome">
+                    Cookie
+                </h3>
+
                 <img
                     src="img/cookie-card.jpg"
                     alt="Cookies"
@@ -238,7 +269,9 @@
 
                 <div class="produto-rodape">
 
-                    <span class="produto-preco">R$ 3,50</span>
+                    <span class="produto-preco">
+                        R$ 3,50
+                    </span>
 
                     <button
                         class="adicionar-carrinho"
@@ -267,14 +300,20 @@
                 data-preco="8.00"
             >
 
+                <h3 class="produto-nome">
+                    Torta Fatia
+                </h3>
+
                 <img
                     src="img/torta-card.webp"
-                    alt="Tortas Fatias"
+                    alt="Torta Fatia"
                 >
 
                 <div class="produto-rodape">
 
-                    <span class="produto-preco">R$ 8,00</span>
+                    <span class="produto-preco">
+                        R$ 8,00
+                    </span>
 
                     <button
                         class="adicionar-carrinho"
@@ -295,12 +334,14 @@
 
             </article>
 
+
         </section>
 
     </main>
 
+
     <!-- PAINEL DO CARRINHO -->
-     <div id="painelCarrinho" class="painel-carrinho">
+    <div id="painelCarrinho" class="painel-carrinho">
 
         <div class="painel-carrinho-topo">
 
@@ -316,17 +357,21 @@
 
         </div>
 
+
         <div id="itensCarrinho" class="itens-carrinho">
-            <!-- 
+
+            <!--
             O JavaScript vai criar aqui cada item com:
 
-            FOTO 
+            FOTO
             NOME
             PREÇO
             + Adicionar
             Remover
             -->
+
         </div>
+
 
         <div class="resumo-carrinho">
 
@@ -339,9 +384,21 @@
         </div>
 
 
-        <!-- MENSAGEM VERDE DE SUCESSO-->
+        <button
+            class="finalizar-pedido"
+            id="finalizarPedido"
+        >
+            Finalizar pedido
+        </button>
 
-    <div id="mensagemCarrinho" class="mensagem-carrinho">
+    </div>
+
+
+    <!-- MENSAGEM VERDE DE SUCESSO -->
+    <div
+        id="mensagemCarrinho"
+        class="mensagem-carrinho"
+    >
         Item adicionado ao carrinho com sucesso!
     </div>
 

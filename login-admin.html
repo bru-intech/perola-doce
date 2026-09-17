@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | Pérola Doce</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-login-admin">
+
+    <main class="login-admin-container">
+
+        <div class="login-admin-caixa">
+
+            <h1>Login - Pérola Doce</h1>
+
+            <label for="emailAdmin">
+                Usuário
+            </label>
+
+            <input
+                type="email"
+                id="emailAdmin"
+                placeholder="Digite seu usuário"
+            >
+
+            <label for="senhaAdmin">
+                Senha
+            </label>
+
+            <input
+                type="password"
+                id="senhaAdmin"
+                placeholder="Digite sua senha"
+            >
+
+            <button id="entrarAdmin">
+                Entrar
+            </button>
+
+            <p id="erroLogin"></p>
+
+        </div>
+
+    </main>
+
+    <script type="module">
+
+    import {
+        auth
+    } from "./firebase.js";
+
+    import {
+        signInWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+    const emailAdmin =
+        document.getElementById("emailAdmin");
+
+    const senhaAdmin =
+        document.getElementById("senhaAdmin");
+
+    const entrarAdmin =
+        document.getElementById("entrarAdmin");
+
+    const erroLogin =
+        document.getElementById("erroLogin");
+
+        entrarAdmin.addEventListener("click", async () => {
+
+    try {
+
+        await signInWithEmailAndPassword(
+            auth,
+            emailAdmin.value,
+            senhaAdmin.value
+        );
+
+        window.location.href = "pedidos.html";
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        erroLogin.textContent =
+            "Usuário ou senha incorretos.";
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

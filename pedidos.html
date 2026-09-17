@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Pedidos | Pérola Doce</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="painel-pedidos">
+
+        <h1>Pedidos Pérola Doce</h1>
+
+        <div class="linha-painel-pedidos"></div>
+
+        <div class="abas-pedidos">
+        
+            <button class="aba-pedido ativa" id="abaAtivos">
+                Ativos
+            </button>
+        
+            <button class="aba-pedido" id="abaFinalizados">
+                Finalizados
+            </button>
+        
+        </div>
+
+        <div id="listaPedidos">
+            <!-- Os pedidos aparecerão aqui -->
+        </div>
+
+    </main>
+
+
+    <script type="module">
+
+        // Firebase do projeto
+        import {
+            auth,
+            db
+        } from "./firebase.js";
+
+
+        // Firebase Authentication
+        import {
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+        // Firebase Firestore
+        import {
+            collection,
+            onSnapshot,
+            doc,
+            updateDoc
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+
+        // Área onde os pedidos serão exibidos
+        const listaPedidos =
+            document.getElementById("listaPedidos");
+
+            const abaAtivos =
+                    document.getElementById("abaAtivos");
+
+                const abaFinalizados =
+                    document.getElementById("abaFinalizados");
+
+                let abaAtual = "ativos";
+
+                let pararDeEscutarPedidos = null;
+
+
+        // ========================================
+        // CARREGAR PEDIDOS
+        // ========================================
+
+        function carregarPedidos() {
+
+            if (pararDeEscutarPedidos) {
+                pararDeEscutarPedidos();
+            }
+
+            pararDeEscutarPedidos = onSnapshot(
+                collection(db, "pedidos"),
+                (resultado) => {
+
+                    listaPedidos.innerHTML = "";
+
+
+                    resultado.forEach((documento) => {
+
+                        const pedido = documento.data();
+
+                        const idPedido = documento.id;
+
+                        const estaFinalizado =
+                            pedido.status === "finalizado";
+
+                            if (abaAtual === "ativos" && estaFinalizado) {
+                            return;
+                        }
+
+                        if (abaAtual === "finalizados" && !estaFinalizado) {
+                            return;
+                        }
+
+
+                        // Cria o card do pedido
+                        const card =
+                            document.createElement("div");
+
+
+                        // Monta as linhas dos produtos
+                        let linhasProdutos = "";
+
+
+                        pedido.itens.forEach((produto) => {
+
+                            const subtotal =
+                                produto.preco * produto.quantidade;
+
+
+                            linhasProdutos += `
+                                <div class="linha-produto-pedido">
+
+                                    <span>
+                                        ${produto.nome}
+                                    </span>
+
+                                    <span>
+                                        ${produto.quantidade}
+                                    </span>
+
+                                    <span>
+                                        R$ ${subtotal
+                                            .toFixed(2)
+                                            .replace(".", ",")}
+                                    </span>
+
+                                </div>
+                            `;
+
+                        });
+
+
+                        // Monta o pedido completo
+                        card.innerHTML = `
+
+                            <div class="pedido-com-acao">
+
+                                <div class="pedido-admin">
+
+                                    <h2>
+                                        ${pedido.nome} fez um pedido!
+                                    </h2>
+
+
+                                    <div class="cabecalho-produtos-pedido">
+
+                                        <strong>
+                                            Produto
+                                        </strong>
+
+                                        <strong>
+                                            Quantidade
+                                        </strong>
+
+                                        <strong>
+                                            Total
+                                        </strong>
+
+                                    </div>
+
+
+                                    ${linhasProdutos}
+
+
+                                    <div class="total-pedido-admin">
+
+                                        <strong>
+                                            Total do pedido:
+                                            R$ ${pedido.total
+                                                .toFixed(2)
+                                                .replace(".", ",")}
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <button
+                                    class="botao-finalizar ${estaFinalizado ? "finalizado" : ""}"
+                                    data-id="${idPedido}"
+                                >
+                                    ${estaFinalizado
+                                        ? "✓ Pedido finalizado!"
+                                        : "Finalizar pedido"}
+                                </button>
+
+                            </div>
+
+                        `;
+
+
+                        // Coloca o pedido na página
+                        const botaoFinalizar =
+                            card.querySelector(".botao-finalizar");
+
+                        botaoFinalizar.addEventListener("click", async () => {
+
+                            await updateDoc(
+                                doc(db, "pedidos", idPedido),
+                                {
+                                    status: "finalizado"
+                                }
+                            );
+
+                        });
+                        listaPedidos.appendChild(card);
+
+                    });
+
+                }
+            );
+
+        }
+
+        abaAtivos.addEventListener("click", () => {
+
+                abaAtual = "ativos";
+
+                abaAtivos.classList.add("ativa");
+                abaFinalizados.classList.remove("ativa");
+
+                carregarPedidos();
+
+            });
+
+
+            abaFinalizados.addEventListener("click", () => {
+
+                abaAtual = "finalizados";
+
+                abaFinalizados.classList.add("ativa");
+                abaAtivos.classList.remove("ativa");
+
+                carregarPedidos();
+
+            });
+
+
+        // ========================================
+        // VERIFICAR LOGIN DA ADMINISTRADORA
+        // ========================================
+
+        onAuthStateChanged(auth, (usuario) => {
+
+            if (usuario) {
+
+                carregarPedidos();
+
+            } else {
+
+                window.location.href =
+                    "login-admin.html";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
