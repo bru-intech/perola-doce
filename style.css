@@ -6,6 +6,7 @@ CONFIGURAÇÕES GERAIS
     --branco: #ffffff;
     --azul-marinho: #172950;
     --preto: #000;
+    --verde: #50c738;
 }
 
 * {
@@ -1068,6 +1069,7 @@ CRÉDITOS
 .saudacao-cliente {
     width: 100%;
     padding: 18px 18px 6px;
+    text-align: center;
 }
 
 .saudacao-cliente p {
@@ -1075,7 +1077,13 @@ CRÉDITOS
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 500;
-    color: var(--azul-marinho);
+    color: var(--preto);
+
+     display: inline-block;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid var(--preto);
 }
 
 .finalizar-pedido {
@@ -1415,4 +1423,33 @@ CRÉDITOS
     color: white;
 
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+/* Mensagem de pedido realizado */
+
+.mensagem-pedido {
+    display: none;
+    margin-top: 20px;
+    padding: 18px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: var(--verde);
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.mensagem-pedido.mostrar {
+    display: block;
+}
+
+.icone-sucesso {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.mensagem-pedido p {
+    margin: 0;
+    font-size: 14px;
 }

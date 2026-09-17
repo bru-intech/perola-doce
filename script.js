@@ -128,8 +128,7 @@ if (boasVindas && nomeSalvo) {
 if (saudacaoCliente && nomeSalvo) {
 
     saudacaoCliente.textContent =
-        "Olá, " + nomeSalvo + "! 👋";
-
+        "Olá, " + nomeSalvo + "! Que bom te ver por aqui. ";
 }
 
 

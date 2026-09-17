@@ -58,7 +58,16 @@ if (confirmarPedido) {
             status: "novo"
         });
 
-        alert("Pedido enviado com sucesso! 🎉");
+        const mensagemPedido =
+             document.getElementById("mensagemPedido");
+
+        if (mensagemPedido) {
+             mensagemPedido.classList.add("mostrar");
+
+             setTimeout(() => {
+        mensagemPedido.classList.remove("mostrar");
+    }, 3000);
+}
     });
 }
 export { db, auth };
