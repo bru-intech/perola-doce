@@ -108,6 +108,13 @@ if (entrarSite) {
             nome
         );
 
+        if (saudacaoCliente) {
+    saudacaoCliente.innerHTML = `
+        <strong>Olá, ${nome}!</strong>
+        <span>Que bom te ver por aqui.</span>
+    `;
+}
+
         boasVindas.style.display = "none";
 
     });

@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500&display=swap"
         rel="stylesheet"
     >
 
@@ -24,25 +24,46 @@
 
 <body>
 
+    <!-- TELA DE BOAS-VINDAS -->
     <div class="boas-vindas" id="boasVindas">
-    <div class="caixa-boas-vindas">
-        <h2>Bem-vindo(a) à Pérola Doce!</h2>
 
-        <p>Como podemos te chamar?</p>
+        <div class="caixa-boas-vindas">
 
-        <input
-            type="text"
-            id="nomeCliente"
-            placeholder="Digite seu nome"
-            autocomplete="off"
-        >
+            <h2>Bem-vindo(a) à</h2>
 
-        <button id="entrarSite">Entrar</button>
+            <div class="marca-boas-vindas">
+                <img
+                    src="img/logo-ostra.png"
+                    alt=""
+                >
 
-        <p class="erro-nome" id="erroNome"></p>
+                <span>Pérola Doce</span>
+            </div>
+
+            <p>Como podemos te chamar?</p>
+
+            <input
+                type="text"
+                id="nomeCliente"
+                placeholder="Digite seu nome"
+                autocomplete="off"
+            >
+
+            <button id="entrarSite">
+                Entrar
+            </button>
+
+            <p
+                class="erro-nome"
+                id="erroNome"
+            ></p>
+
+        </div>
+
     </div>
-</div>
 
+
+    <!-- CABEÇALHO -->
     <header class="cabecalho">
 
         <button
@@ -53,24 +74,26 @@
             ☰
         </button>
 
+
         <div class="nome-marca">
 
             <img
-        src="img/logo-ostra.png"
-        alt=""
-        class="logo-perola"
-    >
+                src="img/logo-ostra.png"
+                alt=""
+                class="logo-perola"
+            >
 
-                      
             <h1>Pérola Doce</h1>
 
         </div>
+
 
         <button
             class="botao-carrinho"
             id="botaoCarrinho"
             aria-label="Abrir carrinho"
         >
+
             <svg
                 class="icone-carrinho"
                 viewBox="0 0 24 24"
@@ -80,114 +103,177 @@
                     d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"
                 ></path>
 
-                <circle cx="10" cy="20" r="1"></circle>
-                <circle cx="18" cy="20" r="1"></circle>
+                <circle
+                    cx="10"
+                    cy="20"
+                    r="1"
+                ></circle>
+
+                <circle
+                    cx="18"
+                    cy="20"
+                    r="1"
+                ></circle>
             </svg>
 
             <span id="contadorCarrinho">0</span>
+
         </button>
 
     </header>
 
-    <nav class="menu-mobile" id="menuMobile">
+
+    <!-- MENU -->
+    <nav
+        class="menu-mobile"
+        id="menuMobile"
+    >
         <a href="index.html">Início</a>
         <a href="produtos.html">Produtos</a>
         <a href="kit-festa.html">Monte seu Kit</a>
         <a href="lojas.html">Lojas</a>
         <a href="sobre.html">Sobre</a>
         <a href="creditos.html">Créditos</a>
-
     </nav>
 
+
+    <!-- CONTEÚDO PRINCIPAL -->
     <main>
 
-    <div class="saudacao-cliente">
-    <p id="saudacaoCliente"></p>
-</div>   
+        <!-- SAUDAÇÃO -->
+        <div class="saudacao-cliente">
+            <p id="saudacaoCliente"></p>
+        </div>
 
+
+        <!-- APRESENTAÇÃO -->
         <section class="apresentacao">
 
-            <img src="img/img-sem-nada.png" 
-            alt="Pérola Doce - Confeitaria Artesanal">
-            
+            <img
+                src="img/img-sem-nada.png"
+                alt="Pérola Doce - Confeitaria Artesanal"
+            >
 
             <div class="texto-apresentacao">
-                <h1>CONFEITARIA ARTESANAL</h1>
-                <p>DELICADEZA EM CADA DETALHE.</p>
+
+                <h1>
+                    CONFEITARIA ARTESANAL
+                </h1>
+
+                <p>
+                    DELICADEZA EM CADA DETALHE.
+                </p>
+
             </div>
 
         </section>
 
+
+        <!-- ATALHOS -->
         <section class="atalhos-home">
 
             <a
                 href="produtos.html"
                 class="card-home"
             >
+
                 <img
                     src="img/new-vitrine.png"
                     alt="Conheça nossos produtos"
                 >
 
-                <span>Conheça nossos produtos</span>
+                <span>
+                    Conheça nossos produtos
+                </span>
+
             </a>
+
 
             <a
                 href="kit-festa.html"
                 class="card-home"
             >
+
                 <img
                     src="img/new-festa-ciano.png"
                     alt="Personalize seu Kit Festa"
                 >
 
-                <span>Personalize seu Kit Festa</span>
+                <span>
+                    Personalize seu Kit Festa
+                </span>
+
             </a>
+
 
             <a
                 href="lojas.html"
                 class="card-home"
             >
+
                 <img
                     src="img/new-placa.png"
                     alt="Nosso espaço"
                 >
 
-                <span>Nosso espaço</span>
+                <span>
+                    Nosso espaço
+                </span>
+
             </a>
 
         </section>
 
     </main>
 
-    <div id="painelCarrinho" class="painel-carrinho">
 
-    <div class="painel-carrinho-topo">
-        <h2>Seu Carrinho</h2>
+    <!-- CARRINHO -->
+    <div
+        id="painelCarrinho"
+        class="painel-carrinho"
+    >
+
+        <div class="painel-carrinho-topo">
+
+            <h2>Seu Carrinho</h2>
+
+            <button
+                id="fecharCarrinho"
+                class="fechar-carrinho"
+                aria-label="Fechar carrinho"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div
+            id="itensCarrinho"
+            class="itens-carrinho"
+        ></div>
+
+
+        <div class="resumo-carrinho">
+
+            <span>Total:</span>
+
+            <strong id="totalCarrinho">
+                R$ 0,00
+            </strong>
+
+        </div>
+
 
         <button
-            id="fecharCarrinho"
-            class="fechar-carrinho"
-            aria-label="Fechar carrinho"
+            class="finalizar-pedido"
+            id="finalizarPedido"
         >
-            ✕
+            Finalizar pedido
         </button>
-        
+
     </div>
 
-    <div id="itensCarrinho" class="itens-carrinho">
-    </div>
-
-    <div class="resumo-carrinho">
-        <span>Total:</span>
-        <strong id="totalCarrinho">R$ 0,00</strong>
-    </div>
-
-    <button class="finalizar-pedido" id="finalizarPedido">
-    Finalizar pedido
-</button>
-
-</div>
 
     <script src="script.js"></script>
 
